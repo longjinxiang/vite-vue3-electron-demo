@@ -1,0 +1,36 @@
+{
+  "name": "vue_demo",
+  "private": true,
+  "version": "1.0.0",
+  "main": "src/main/main.ts",
+  "description": "app",
+  "author": "kk",
+  "scripts": {
+    "dev": "concurrently vite \"pnpm electron:dev\"",
+    "render:build": "vue-tsc --noEmit && vite build",
+    "main:build": "electron-builder",
+    "build": "pnpm render:build && pnpm main:build",
+    "preview": "vite preview",
+    "electron:dev": "electron ."
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "vue": "^3.2.37",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "concurrently": "^7.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^20.0.1",
+    "electron-builder": "^23.3.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vue-tsc": "^0.38.4"
+  },
+  "build": {
+    "appId": "ink.554.violet.vite_electron_demo",
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    }
+  }
+}
